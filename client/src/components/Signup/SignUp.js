@@ -19,10 +19,11 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "http://localhost:8080/api/users";
-      const { data: res } = await axios.post(url, data);
+      console.log(data);
+      const url = "http://localhost:8000/api/users";
+      const response = await axios.post(url, data);
       navigate("/login");
-      console.log(res.message);
+      console.log(response.data);
     } catch (error) {
       if (
         error.response &&
